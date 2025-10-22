@@ -27,12 +27,15 @@
             line-height: 1.7;
             background-color: var(--white);
             color: var(--black);
+            min-width: 100%;
+            overflow-x: auto;
         }
 
         .container {
-            max-width: 1600px;
+            max-width: 1500px;
             margin: 0 auto;
             padding: 0 40px;
+            width: 100%;
         }
 
         /* Hero Section */
@@ -122,17 +125,21 @@
         .two-column-container {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 50px;
+            gap: 60px;
             margin: 60px 0;
+            align-items: stretch;
         }
 
         /* Main Cards */
         .card {
             background-color: var(--white);
             border: 3px solid var(--gold);
-            padding: 45px;
+            padding: 45px 50px;
             width: 100%;
             min-width: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .card h2 {
@@ -223,7 +230,7 @@
             background-color: var(--light-gray);
             border: 2px solid var(--gold);
             padding: 25px 30px;
-            margin: 25px 0;
+            margin: 25px 0 30px 0;
         }
 
         .scoring-guide h4 {
@@ -251,25 +258,59 @@
         .priority-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
-            font-size: 1.05em;
+            margin-top: 0;
+            font-size: 0.92em;
             border: 3px solid var(--gold);
+            table-layout: auto;
         }
 
         .priority-table th {
             background-color: var(--black);
             color: var(--white);
-            padding: 20px 18px;
+            padding: 18px 15px;
             text-align: left;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-size: 0.9em;
         }
 
         .priority-table td {
-            padding: 20px 18px;
+            padding: 18px 15px;
             border-bottom: 1px solid #ddd;
             background-color: var(--white);
+            font-size: 0.95em;
+        }
+
+        .priority-table td:first-child {
+            font-weight: 700;
+        }
+
+        /* Column widths for better distribution */
+        .priority-table th:first-child,
+        .priority-table td:first-child {
+            width: 35%;
+        }
+
+        .priority-table th:nth-child(2),
+        .priority-table td:nth-child(2),
+        .priority-table th:nth-child(3),
+        .priority-table td:nth-child(3),
+        .priority-table th:nth-child(4),
+        .priority-table td:nth-child(4) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .priority-table th:last-child,
+        .priority-table td:last-child {
+            width: 20%;
+            text-align: center;
+        }
+
+        .priority-table-wrapper {
+            overflow-x: visible;
+            margin-top: 30px;
         }
 
         .priority-table tr:last-child td {
@@ -401,7 +442,7 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
+        @media (max-width: 1150px) {
             .hero h1 { font-size: 2.5em; }
             .hero-subtitle { font-size: 1.5em; }
             .hero-boxes { flex-direction: column; align-items: center; }
@@ -410,6 +451,9 @@
                 gap: 30px;
             }
             .container { padding: 0 20px; }
+            .card { 
+                height: auto;
+            }
             .card h2 { font-size: 1.8em; }
             .step { 
                 padding-left: 0; 
@@ -584,6 +628,7 @@
                         <p><strong>Low Confidence:</strong> Purely speculative or experimental</p>
                     </div>
                     
+                    <div class="priority-table-wrapper">
                     <table class="priority-table">
                         <thead>
                             <tr>
@@ -625,6 +670,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                 </div>
 
                 <div class="step">
