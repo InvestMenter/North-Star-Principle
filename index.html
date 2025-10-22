@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our North Star Principles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #D6B160;
+            --black: #000000;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--black);
+            text-align: center;
+            padding: 80px 40px;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: var(--gold);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: 2em;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 50px;
+        }
+
+        /* Hero Boxes */
+        .hero-boxes {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .hero-box {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            padding: 35px;
+            background-color: var(--white);
+            color: var(--black);
+            border: 3px solid var(--gold);
+            position: relative;
+        }
+
+        .hero-box h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-box.reactive h3 {
+            color: var(--black);
+        }
+
+        .hero-box.proactive h3 {
+            color: var(--gold);
+        }
+
+        .hero-box p {
+            font-size: 1.15em;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .hero-box em {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            font-size: 1.1em;
+            color: var(--gold);
+        }
+
+        /* Two Column Layout */
+        .two-column-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 50px;
+            margin: 60px 0;
+        }
+
+        /* Main Cards */
+        .card {
+            background-color: var(--white);
+            border: 3px solid var(--gold);
+            padding: 45px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .card h2 {
+            font-size: 2.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--black);
+            margin-bottom: 15px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        /* Steps */
+        .step {
+            margin: 40px 0;
+            padding-left: 70px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .step h3 {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step p {
+            font-size: 1.05em;
+            color: var(--black);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .step ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .step li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .step strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .example {
+            background-color: var(--light-gray);
+            padding: 20px 25px;
+            margin-top: 18px;
+            border-left: 4px solid var(--gold);
+            line-height: 1.7;
+        }
+
+        .example strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .example br {
+            line-height: 2;
+        }
+
+        /* Scoring Guide Box */
+        .scoring-guide {
+            background-color: var(--light-gray);
+            border: 2px solid var(--gold);
+            padding: 25px 30px;
+            margin: 25px 0;
+        }
+
+        .scoring-guide h4 {
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .scoring-guide p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin: 8px 0;
+            color: var(--black);
+        }
+
+        .scoring-guide strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Priority Table */
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 1.05em;
+            border: 3px solid var(--gold);
+        }
+
+        .priority-table th {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 20px 18px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .priority-table td {
+            padding: 20px 18px;
+            border-bottom: 1px solid #ddd;
+            background-color: var(--white);
+        }
+
+        .priority-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .priority-table tr:hover td {
+            background-color: var(--light-gray);
+        }
+
+        .text-high { 
+            color: var(--gold); 
+            font-weight: 700; 
+        }
+        
+        .text-low { 
+            color: #666; 
+            font-weight: 700; 
+        }
+        
+        .text-medium { 
+            color: var(--black); 
+            font-weight: 700; 
+        }
+        
+        .priority-1 { 
+            color: var(--gold); 
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .priority-2 { 
+            color: var(--black); 
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .priority-3 { 
+            color: #888; 
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background-color: var(--white);
+            border: 3px solid var(--gold);
+            padding: 55px 50px;
+            margin: 50px 0 60px 0;
+        }
+
+        .philosophy-section h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--black);
+            margin-bottom: 45px;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .philosophy-item {
+            margin-bottom: 40px;
+        }
+
+        .philosophy-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .philosophy-item h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .philosophy-item p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--black);
+            font-weight: 400;
+        }
+
+        .philosophy-item strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .philosophy-item em {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 40px;
+            background-color: var(--black);
+            color: var(--white);
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: var(--gold);
+        }
+
+        .footer h3 {
+            font-size: 1.8em;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .footer strong {
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.5em; }
+            .hero-boxes { flex-direction: column; align-items: center; }
+            .two-column-container { 
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .container { padding: 0 20px; }
+            .card h2 { font-size: 1.8em; }
+            .step { 
+                padding-left: 0; 
+                margin-bottom: 40px; 
+            }
+            .step-number { 
+                position: relative; 
+                margin-bottom: 15px;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 50px 20px; }
+            .hero h1 { font-size: 2em; }
+            .hero-subtitle { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Our North Star Principles</h1>
+            <p class="hero-subtitle">We Learn Fast & Solve Forward</p>
+            
+            <div class="hero-boxes">
+                <div class="hero-box reactive">
+                    <h3>😞 Learn (Reactive)</h3>
+                    <p>"Why did we lose 5 deals? <em>Let's learn quickly.</em>"</p>
+                </div>
+                <div class="hero-box proactive">
+                    <h3>📈 Solve Forward (Proactive)</h3>
+                    <p>"Now how do we close 10 <em>new</em> deals next month?"</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="two-column-container">
+            <!-- Section 1: How We Solve Things -->
+            <section class="card">
+                <h2>🚀 How We Solve Things</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Learn Fast</h3>
+                    <p>When something goes wrong, we do a <strong>15-minute post-mortem</strong>, then move on.</p>
+                    <ul>
+                        <li><strong>What happened?</strong> Just the facts.</li>
+                        <li><strong>Why?</strong> Root cause, not blame.</li>
+                        <li><strong>Key Lesson?</strong> One takeaway to apply forward.</li>
+                    </ul>
+                    <p style="font-style: italic; margin-top: 10px;">We don't dwell on losses, but we don't ignore them either.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Find the Opportunity</h3>
+                    <p>What opportunity are we missing? Frame it as a future gain, not a past loss.</p>
+                    <div class="example">
+                        <strong>Instead of saying:</strong> "Our CEO is overwhelmed with admin work."<br><br>
+                        <strong>Ask:</strong> "How much more revenue could we generate if the CEO spent 100% of their time on networking, partnerships, and strategic growth instead of admin tasks?"
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Measure the Opportunity</h3>
+                    <p>How much revenue are we leaving on the table right now? Calculate it specifically.</p>
+                    <div class="example">
+                        <strong>Example: CEO Time Opportunity</strong><br><br>
+                        
+                        <strong>Current State:</strong><br>
+                        • CEO spends 15 hours/week on admin tasks (scheduling, paperwork, data entry)<br>
+                        • That's 60 hours/month on non-revenue activities<br><br>
+                        
+                        <strong>If Reallocated to Business Development:</strong><br>
+                        • 60 hours/month = 15 networking meetings or strategic partnerships<br>
+                        • Industry average: 1 in 5 meetings leads to a deal<br>
+                        • That's 3 new deals per month<br>
+                        • Average deal value: $5,000 in GCI<br><br>
+                        
+                        <strong>Opportunity Cost:</strong><br>
+                        3 deals × $5,000 = <span style="color: var(--gold); font-weight: 700; font-size: 1.15em;">$15,000/month in missed revenue</span><br><br>
+                        
+                        <strong>Annual Impact:</strong> $180,000/year we're leaving on the table
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Propose the Solution</h3>
+                    <p>What specific action will capture this opportunity?</p>
+                    <div class="example">
+                        <strong>Example:</strong> "Hire a full-time Executive Assistant or Virtual Admin to handle all admin tasks (scheduling, paperwork, data entry, CRM updates). CEO focuses 100% on networking, partnerships, and business development."
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Calculate the ROI</h3>
+                    <p>What will we invest, and what will we gain?</p>
+                    <div class="example">
+                        <strong>Input (Cost):</strong><br>
+                        • Executive Assistant salary: $4,000/month<br>
+                        • Benefits & tools: $500/month<br>
+                        • Total Investment: $4,500/month<br><br>
+                        
+                        <strong>Output (Gain):</strong><br>
+                        • 3 extra deals per month = $15,000/month in GCI<br>
+                        • Net gain: $10,500/month<br>
+                        • Annual net gain: $126,000/year<br><br>
+                        
+                        <strong>ROI:</strong> <span style="color: var(--gold); font-weight: 700;">233% return</span> (For every $1 spent, we gain $2.33)
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Implement</h3>
+                    <p>Execute the plan. Ideas without action are just wishes.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <h3>Measure & Learn</h3>
+                    <p>Did we actually capture the opportunity? Use the results to find the next opportunity.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: How We Prioritize Things -->
+            <section class="card">
+                <h2>🥇 How We Prioritize Things</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>List All Ideas</h3>
+                    <p>Get every project, initiative, and "what if" into one place.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Score Each Idea</h3>
+                    <p>Ask three questions (answer High, Medium, or Low):</p>
+                    <ul>
+                        <li><strong>Lift:</strong> How much will this increase revenue or closed transactions?</li>
+                        <li><strong>Effort:</strong> How much time, money, or resources will it take?</li>
+                        <li><strong>Confidence:</strong> How sure are we this will work?</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Do the Best Thing First</h3>
+                    <p style="margin-bottom: 20px;"><strong>High Lift + Low Effort + High Confidence = Do it now.</strong></p>
+                    
+                    <div class="scoring-guide">
+                        <h4>Quick Scoring Guide:</h4>
+                        <p><strong>High Lift:</strong> Will significantly increase closed transactions or revenue</p>
+                        <p><strong>Medium Lift:</strong> Will moderately improve results</p>
+                        <p><strong>Low Lift:</strong> Minimal or unclear impact on our North Star</p>
+                        <hr style="border: 1px solid var(--gold); margin: 10px 0;">
+                        <p><strong>Low Effort:</strong> Can be done in under 2 weeks with existing resources</p>
+                        <p><strong>Medium Effort:</strong> Takes 2-8 weeks or requires some new resources</p>
+                        <p><strong>High Effort:</strong> Takes 2+ months or significant investment</p>
+                        <hr style="border: 1px solid var(--gold); margin: 10px 0;">
+                        <p><strong>High Confidence:</strong> We have data or proven examples this works</p>
+                        <p><strong>Medium Confidence:</strong> Logical but unproven in our context</p>
+                        <p><strong>Low Confidence:</strong> Purely speculative or experimental</p>
+                    </div>
+                    
+                    <table class="priority-table">
+                        <thead>
+                            <tr>
+                                <th>Idea</th>
+                                <th>Lift</th>
+                                <th>Effort</th>
+                                <th>Confidence</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fix Zillow Sync Bug</strong></td>
+                                <td class="text-high">High</td>
+                                <td class="text-high">Low</td>
+                                <td class="text-high">High</td>
+                                <td class="priority-1">Do Now</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Launch Email Campaign</strong></td>
+                                <td class="text-high">High</td>
+                                <td class="text-medium">Medium</td>
+                                <td class="text-high">High</td>
+                                <td class="priority-1">Do Now</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Host Open House Event</strong></td>
+                                <td class="text-medium">Medium</td>
+                                <td class="text-medium">Medium</td>
+                                <td class="text-medium">Medium</td>
+                                <td class="priority-2">Do Next</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Redesign Office Space</strong></td>
+                                <td class="text-low">Low</td>
+                                <td class="text-low">High</td>
+                                <td class="text-medium">Medium</td>
+                                <td class="priority-3">Do Last</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Review & Reassess</h3>
+                    <p>Priorities shift. Market conditions change. New data emerges.</p>
+                    <ul>
+                        <li><strong>Weekly:</strong> Review top 5 priorities and adjust scores</li>
+                        <li><strong>Monthly:</strong> Re-score the entire backlog</li>
+                        <li><strong>Always:</strong> Kill projects that no longer align with our goals</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-style: italic;">The ability to say "no" or "not now" is as important as knowing what to say "yes" to.</p>
+                </div>
+
+            </section>
+        </div> <!-- End two-column-container -->
+
+        <!-- Operating Philosophy Section -->
+        <section class="philosophy-section">
+            <h2>💭 Our Operating Philosophy</h2>
+            
+            <div class="philosophy-item">
+                <h3>We Balance Speed with Wisdom</h3>
+                <p>We don't ignore the past, but we don't live in it. When we fail, we do a <strong>fast 15-minute post-mortem</strong> to capture lessons, then we immediately pivot to solving forward. This way, we learn from every mistake without getting paralyzed by analysis.</p>
+            </div>
+
+            <div class="philosophy-item">
+                <h3>We Think in Systems, Not Silos</h3>
+                <p>Our North Star (Closed Transactions) is supported by leading indicators and protected by guardrails. When we optimize one metric, we always check: <em>"Does this harm a guardrail? Does this actually move a leading indicator?"</em> Short-term gains that damage client trust or team morale are not gains at all.</p>
+            </div>
+
+            <div class="philosophy-item">
+                <h3>We Default to Action</h3>
+                <p>Perfect information never comes. We gather enough data to be confident, then we act. We'd rather test a "pretty good" idea this week than wait three months for the "perfect" idea. Speed of learning beats perfect planning.</p>
+            </div>
+
+            <div class="philosophy-item">
+                <h3>We Measure What Matters</h3>
+                <p>Not everything that can be measured should be managed. We ruthlessly focus on metrics that either (1) predict our North Star, (2) protect our long-term health, or (3) help us learn faster. Everything else is noise.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <h3>See an opportunity? <strong>Let's Solve It Forward.</strong></h3>
+    </footer>
+
+</body>
+</html>
